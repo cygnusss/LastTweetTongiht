@@ -1,9 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 
+import Home from "./Home/Home.jsx";
+
 const Application = () => (
   <div>
-    React has been initialized!
+    <Home />
   </div>
 );
 
