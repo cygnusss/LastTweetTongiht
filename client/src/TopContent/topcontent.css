@@ -1,0 +1,10 @@
+.userBackground {
+  background-color: red;
+  height: 280px;
+  width: 100%;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
