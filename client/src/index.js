@@ -15,11 +15,15 @@ class Application extends Component {
   componentDidMount() {
     window.addEventListener("scroll", () => {
       if ($(window).scrollTop() >= 220){
-        this.setState({ moveAvatar: true })
-      } else if ($(window).scrollTop() >= 280){
-        this.setState({ position: "fixed" })
+        this.setState({ moveAvatar: true });
       } else {
-        this.setState({ position: "static", moveAvatar: false })
+        this.setState({ moveAvatar: false });
+      }
+      
+      if ($(window).scrollTop() >= 280){
+        this.setState({ position: "fixed" });
+      } else {
+        this.setState({ position: "static" });
       }
     });
   }
