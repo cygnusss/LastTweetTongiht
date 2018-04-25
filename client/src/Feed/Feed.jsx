@@ -67,7 +67,7 @@ class Feed extends Component {
       <div className={ css.stream } style={ style }>
         <ol className={ css.stream_container }>
           <div className={ css.profile_heading }></div>
-          <TweetsList tweets={this.state.tweets}/>
+          <TweetsList tweets={this.state.tweets} handleTweetClick={ this.props.handleTweetClick }/>
         </ol>
         {/* Results in calling getTweets too many times */}
         {/* Might gonna need throttle later */}

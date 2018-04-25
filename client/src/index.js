@@ -4,12 +4,19 @@ import $ from "jquery";
 
 import Feed from "./Feed/Feed.jsx";
 import PageCanopy from "./PageCanopy/PageCanopy.jsx";
+import Modal from "./Modal/Modal.jsx";
 
 class Application extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { position: "static", moveAvatar: false };
+    this.state = { position: "static", moveAvatar: false, tweetData: null };
+    this.handleTweetClick = this.handleTweetClick.bind(this);
+  }
+
+  handleTweetClick(tweetData) {
+    console.log(tweetData)
+    this.setState({ tweetData });
   }
 
   componentDidMount() {
@@ -30,10 +37,11 @@ class Application extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <Modal tweetData={this.state.tweetData}/>
         <PageCanopy position={this.state.position} moveAvatar={this.state.moveAvatar} />
-        <Feed position={this.state.position} />
-      </div>
+        <Feed position={this.state.position} handleTweetClick={this.handleTweetClick} />
+      </React.Fragment>
     )
   }
 }

@@ -1,0 +1,52 @@
+.overlay {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.modal {
+  border-radius: 6px;
+  margin: 50px auto 0;
+  max-width: 670px;
+  min-height: 150px;
+  background: #fff;
+}
+
+.modal_content {
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+
+.avatar {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.account_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullname {
+  word-break: break-all;
+  color: #14171a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.username {
+  color: #657786;
+  font-size: 13px;
+  text-decoration: none!important;
+}
+
+.time {
+  font-size: 14px;
+  color: #657786;
+}

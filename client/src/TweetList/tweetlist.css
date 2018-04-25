@@ -6,16 +6,16 @@
   position: relative;
 }
 
+.stream_item:hover {
+  background: #f5f8fa;
+}
+
 .tweet {
   border-bottom: 1px solid #e6ecf0;
   cursor: pointer;
   min-height: 50px;
   padding: 9px 12px;
   margin-left: 60px;
-}
-
-.stream_item_header {
-
 }
 
 .avatar {
