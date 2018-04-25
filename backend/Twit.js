@@ -10,7 +10,7 @@ const config = {
 
 const Twit = TwitterAPI(config);
 
-// Gets tweets from the user (John Oliver)
+// By default gets latest 20 tweets from John Oliver's twitter account
 // Since sending a GET request is async it is convinient to have a promise
 module.exports.getTweets = (max_id, screen_name="iamjohnoliver", count=20) => new Promise((resolve, reject) => {
   Twit.get("statuses/user_timeline", { max_id, screen_name, count })

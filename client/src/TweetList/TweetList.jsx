@@ -14,8 +14,7 @@ const TweetList = ({ tweets, handleTweetClick }) => (
 
         const date = moment(created_at).startOf("day").fromNow();
         const profileImage = profile_image_url_https;
-
-        const tweetData = { text, date, name, profileImage, screen_name }
+        const tweetData = { text, date, name, profileImage, screen_name, clicked: true };
 
         return (
           <li className={ css.stream_item } onClick={ () => { handleTweetClick(tweetData) } }>

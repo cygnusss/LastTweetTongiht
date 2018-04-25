@@ -7,28 +7,42 @@ class Modal extends Component {
 
     this.state = {
       activeModal: false,
-      tweetData: {},
+      tweetData: { // All props are initially undefined to avoid errors
+        profileImage: undefined,
+        name: undefined,
+        screen_name: undefined,
+        text: undefined,
+        date: undefined,
+        clicked: false,
+      },
     }
     
     this.closeModal = this.closeModal.bind(this);
   }
 
-  closeModal() { this.setState({ activeModal: false }) }
+  closeModal() {
+    const newTweetData = { ...this.state.tweetData, clicked: false };
+    this.setState({ activeModal: false, tweetData: newTweetData });
+    this.props.handleTweetClick(newTweetData);
+  }
 
   componentWillReceiveProps(nextProps) {
     const tweetData = nextProps.tweetData;
-    if (tweetData !== this.state.tweetData) {
+    if (JSON.stringify(tweetData) !== JSON.stringify(this.state.tweetData)) {
       this.setState({ tweetData, activeModal: true});
     }
   }
 
   render() {
     return (
-      <div 
-        onClick={ this.closeModal }
-        className={css.overlay}
-        style={ this.state.activeModal ? {} : { display: "none" } }
+      <div
+        className={ css.modal_overlay_container }
+        style={ 
+          this.state.activeModal && this.state.tweetData.clicked 
+          ? {} : { display: "none" }
+        }
       >
+        <div onClick={ this.closeModal } className={ css.overlay }></div>
         <div className={css.modal}>
           <div className={css.modal_content}>
             <a href="https://twitter.com/iamjohnoliver">
@@ -43,11 +57,11 @@ class Modal extends Component {
               </a>
               <a href="https://twitter.com/iamjohnoliver">
                 <span className={ css.username }>
-                  @<b>{ this.state.tweetData.screen_name }</b>
+                  @<b style={{ fontWeight: "normal" }} >{ this.state.tweetData.screen_name }</b>
                 </span>
               </a>
             </div>
-            <p style={{ fontSize: 27 }}>{ this.state.tweetData.text }</p>
+            <div className={ css.tweet_text }>{ this.state.tweetData.text }</div>
             <span className={ css.time }>{ this.state.tweetData.date }</span>
           </div>
         </div>
