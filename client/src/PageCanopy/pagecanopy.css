@@ -1,0 +1,25 @@
+.ImageAligner {
+  margin: 0 auto;
+  height: 280px;
+  width: 890px;
+  max-width: 890px;
+}
+
+.ProfileCanopyBG {
+  position: absolute;
+  background-color: red;
+  height: 280px;
+  width: 100%;
+}
+
+.ProfileAvatar_image {
+  bottom: -180px;
+  position: relative;  
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background: #fff;
+  transition: bottom .3s;
+  z-index: 3;
+}

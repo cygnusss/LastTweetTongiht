@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import $ from "jquery";
 
 import Feed from "./Feed/Feed.jsx";
-import TopContent from "./TopContent/TopContent.jsx";
+import PageCanopy from "./PageCanopy/PageCanopy.jsx";
 
 class Application extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Application extends Component {
   render() {
     return (
       <div>
-        <TopContent position={this.state.position}/>
+        <PageCanopy position={this.state.position}/>
         <Feed position={this.state.position}/>
       </div>
     )
