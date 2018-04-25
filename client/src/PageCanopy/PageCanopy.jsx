@@ -30,7 +30,7 @@ class PageCanopy extends Component {
       style = { bottom: 150 };
     }
     return (
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", zIndex: 1 }}>
         <div className={css.ProfileCanopyBG}></div>
         <div className={css.ImageAligner}>
           <div  className={css.ProfileAvatar} style={style}>

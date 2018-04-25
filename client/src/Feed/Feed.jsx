@@ -9,22 +9,15 @@ import css from "./feed.css";
 class Feed extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       tweets: [],
       max_id: undefined,
       loading: false, // Later I may Add a spinner using this
       position: "static",
     };
-
+    
     this.getTweets = this.getTweets.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const position = nextProps.position;
-    if (position !== this.state.position) {
-      this.setState({ position })
-    }
   }
 
   componentDidMount() {
@@ -34,9 +27,16 @@ class Feed extends Component {
     // of the entire document (ie user reached the page's bottom) – load more tweets
     window.addEventListener("scroll", () => {
       if ($(window).scrollTop() + $(window).height() == $(document).height()){
-        this.getTweets();
+        this.getTweets()
       }
     });
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    const position = nextProps.position;
+    if (position !== this.state.position) {
+      this.setState({ position })
+    }
   }
 
   getTweets() {
@@ -58,20 +58,23 @@ class Feed extends Component {
   }
 
   render() {
-    let style = { maxWidth: 490 };
+    let style = { maxWidth: 640 };
     if (this.state.position === "fixed") {
       style.paddingTop = 60;
     }
     return (
-      <div style={style}>
-        <ul>
+      <div className={ css.stream } style={ style }>
+        <ol className={ css.stream_container }>
+          <div className={ css.profile_heading }></div>
           <TweetsList tweets={this.state.tweets}/>
-        </ul>
-        {
-          this.state.loading 
-            ? <p>loading...</p>
-            : ""
-        }
+        </ol>
+        {/* Results in calling getTweets too many times */}
+        {/* Might gonna need throttle later */}
+        {/* { this.state.loading ?
+          <div className={css.spinner_container}>
+            <div className={ css.spinner }></div> 
+          </div> 
+          : "" } */}
       </div>
     );
   }
