@@ -9,15 +9,17 @@ class Application extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { position: "static" };
+    this.state = { position: "static", moveAvatar: false };
   }
 
   componentDidMount() {
     window.addEventListener("scroll", () => {
-      if ($(window).scrollTop() >= 280){
+      if ($(window).scrollTop() >= 220){
+        this.setState({ moveAvatar: true })
+      } else if ($(window).scrollTop() >= 280){
         this.setState({ position: "fixed" })
       } else {
-        this.setState({ position: "static" })
+        this.setState({ position: "static", moveAvatar: false })
       }
     });
   }
@@ -25,8 +27,8 @@ class Application extends Component {
   render() {
     return (
       <div>
-        <PageCanopy position={this.state.position}/>
-        <Feed position={this.state.position}/>
+        <PageCanopy position={this.state.position} moveAvatar={this.state.moveAvatar} />
+        <Feed position={this.state.position} />
       </div>
     )
   }

@@ -8,32 +8,40 @@ class PageCanopy extends Component {
     super(props);
 
     this.state = {
-      position: "static"
+      position: "static",
+      moveAvatar: false,
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const position = nextProps.position;
+    const moveAvatar = nextProps.moveAvatar;
     if (position !== this.state.position) {
       this.setState({ position });
+    }
+    if (moveAvatar !== this.state.moveAvatar) {
+      this.setState({ moveAvatar });
     }
   }
 
   render() {
     let style;
-    if (this.state.position === "fixed") {
-      style = { bottom: -50 };
+    if (this.state.moveAvatar) {
+      style = { bottom: 150 };
     }
     return (
       <div style={{ position: "relative" }}>
         <div className={css.ProfileCanopyBG}></div>
         <div className={css.ImageAligner}>
-          <img
-            style={style}
-            className={css.ProfileAvatar_image}
-            src="https://pbs.twimg.com/profile_images/1393958859/main_400x400.jpg" alt="johnoliver"/>
+          <div  className={css.ProfileAvatar} style={style}>
+            <a style={{ outline: "none" }} src={"https://twitter.com/iamjohnoliver"}>
+              <img
+                className={css.ProfileAvatar_image}
+                src="https://pbs.twimg.com/profile_images/1393958859/main_400x400.jpg" alt="johnoliver"/>
+            </a>
+          </div>
         </div>
-        <Navbar position={this.state.position} />
+        <Navbar position={this.state.position} moveAvatar={this.state.moveAvatar} />
       </div>
     )
   }
