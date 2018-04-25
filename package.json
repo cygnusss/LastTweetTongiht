@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "app": "node backend/server.js",
-    "app-dev": "nodemon backend/server.js",
+    "server-dev": "nodemon backend/server.js",
     "react": "webpack --watch",
     "test": "mocha -R spec --compilers js:babel-register ./tests/server.test.js"
   },

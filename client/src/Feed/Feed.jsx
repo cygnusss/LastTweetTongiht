@@ -24,7 +24,7 @@ class Feed extends Component {
     this.getTweets();
     // This will listen to the scroll event
     // If the top scroll + the size of the screen equals to the size
-    // of the entire document (ie user reached the page's bottom) – load more tweets
+    // of the entire document (ie user has reached the page's bottom) – load more tweets
     window.addEventListener("scroll", () => {
       if ($(window).scrollTop() + $(window).height() == $(document).height()){
         this.getTweets()
@@ -48,6 +48,7 @@ class Feed extends Component {
         // I used the BigNumber module that lets you properly work with big numbers
           // Saving last tweet's id and substracting 1 from it allows to fetch
           // tweets with IDs less then that of the last fetched tweet
+        // I am not sure yet how Twitter gives IDs – it may be more simpler
         const id_str = data[data.length - 1].id_str;
         const max_id = BigNumber(id_str).minus(1).toString(10);
         
@@ -56,7 +57,7 @@ class Feed extends Component {
         this.setState({ tweets, max_id, loading: false });
       });
   }
-
+  
   render() {
     let style = { maxWidth: 640 };
     if (this.state.position === "fixed") {
