@@ -31,7 +31,8 @@ class Feed extends Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    // This will update the state when the navbar's position changes to fixed
+    // This will listen to the parent component to pass props
+    // and will update the state when the navbar's position changes to fixed
     const position = nextProps.position;
     if (position !== this.state.position) {
       this.setState({ position })
@@ -46,7 +47,7 @@ class Feed extends Component {
         // I used the BigNumber module that lets you properly work with big numbers
           // Saving last tweet's id and substracting 1 from it allows to fetch
           // tweets with IDs less then that of the last fetched tweet
-        // I am not sure yet how Twitter gives IDs – the workaround may be more simpler
+        // I am not sure yet how Twitter gives IDs – the workaround may be more simple
         const id_str = data[data.length - 1].id_str;
         const max_id = BigNumber(id_str).minus(1).toString(10);
         
