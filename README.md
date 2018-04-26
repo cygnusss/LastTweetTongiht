@@ -5,7 +5,7 @@
 1. [About](#about)
 1. [Requirements](#requirements)
 1. [Development](#development)
-  1. [Start Development](#start-development)
+    1. [Start Development](#start-development)
 
 ## About
 
@@ -33,6 +33,17 @@ Last Tweet Tonight –– a **unique** application for true fans of John Oliver'
   ```sh
     npm install
   ```
+## Set Environmental Variables
+
+1. Create a .env file and open it
+2. Put in your twitter app (https://apps.twitter.com/) secret information:
+  ```sh
+    CONSUMER_KEY='YOUR_KEY'
+    CONSUMER_SECRET='YOUR_SECRET'
+    ACCESS_TOKEN='YOUR_TOKEN'
+    ACCESS_TOKEN_SECRET='YOUR_TOKEN_SECRET'
+  ```
+3. Save the file and exist
   
 ## Start Development
 
