@@ -1,5 +1,7 @@
 # LastTweetTonight
 
+![alt LastTweetTonight]​(https://giphy.com/gifs/1fjEQa7ljHwsN78Sqo)
+
 ## Table of Contents
 
 1. [About](#about)
