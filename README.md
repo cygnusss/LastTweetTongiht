@@ -1,4 +1,4 @@
-# LastTweetTongiht
+# LastTweetTonight
 
 ## Table of Contents
 
@@ -20,10 +20,10 @@ Last Tweet Tonight –– a **unique** application for true fans of John Oliver'
 
 ## Development
 
-1. For the from cygnusss/LastTweetTongiht on github
+1. For the from cygnusss/LastTweetTonight on github
 2. Clone down your fork
   ```sh
-    git clone https://github.com/<username>/LastTweetTongiht
+    git clone https://github.com/<username>/LastTweetTonight
   ```
 3. Move into the repo after it's been cloned onto your machine by typing the following command:
   ```sh
