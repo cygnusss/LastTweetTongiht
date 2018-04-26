@@ -4,7 +4,7 @@ import moment from "moment";
 
 const TweetList = ({ tweets, handleTweetClick }) => (
   <React.Fragment>
-    {
+    { // Render all tweets to the page
       tweets.map(({ text, created_at, user }, index) => {
         const { 
           name, 
