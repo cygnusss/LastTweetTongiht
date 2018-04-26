@@ -9,6 +9,7 @@
 1. [Development](#development)
     1. [Set Environmental Variables](#set-environmental-variables)
     1. [Start Development](#start-development)
+1. [Application Flow](#application-flow)
 
 ## About
 
@@ -58,3 +59,6 @@ Run the following command to build bundle.js:
   ```sh
     npm run react
   ```
+## Application Flow
+
+![alt AppFlow](https://image.ibb.co/cfKcWx/Screen_Shot_2018_04_26_at_2_35_25_AM.png)
