@@ -1,11 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { render } from "react-dom";
 
-const Application = () => (
-  <div>
-    React has been initialized!
-  </div>
-);
+import Application from "./Application/Application.jsx";
 
 const ROOT = document.getElementById("root");
 render(<Application />, ROOT);

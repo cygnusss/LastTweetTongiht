@@ -1,0 +1,47 @@
+.navbar {
+  height: 60px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  widows: 100%;
+}
+
+.navbar_aligner {
+  margin: 0 auto;
+  max-width: 840px;
+  height: 60px;
+
+}
+
+.navbar_card {
+  overflow: hidden;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding-top: 60px;
+  transition: padding-top .3s;
+}
+
+.grid {
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+}
+
+.navbar_card_logo {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.navbar_card_mini {
+  box-sizing: border-box;
+  width: 240px;
+  height: 60px;
+  padding: 12px 15px;
+}
