@@ -1,6 +1,6 @@
 # LastTweetTonight
 
-![alt LastTweetTonight]​(https://giphy.com/gifs/1fjEQa7ljHwsN78Sqo)
+![alt LastTweetTonight](https://image.ibb.co/exthgx/Last_Tweet_Tonight.gif)
 
 ## Table of Contents
 
