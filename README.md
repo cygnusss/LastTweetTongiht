@@ -5,6 +5,7 @@
 1. [About](#about)
 1. [Requirements](#requirements)
 1. [Development](#development)
+    1. [Set Environmental Variables](#set-environmental-variables)
     1. [Start Development](#start-development)
 
 ## About
