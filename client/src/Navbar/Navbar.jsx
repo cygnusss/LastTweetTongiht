@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import css from "./navbar.css";
 
+// When user reaches a certain point in the page
+// It triggers the scroll listener and in parent component updates the state's position and moveAvatar properties 
+// They are further passed down to this component and depending on their value they change the position of the navbar
+// and hide/show the avatar
 const Navbar = ({ position, moveAvatar }) => {
-  // When user reaches a certain point in the page
-  // It triggers the scroll listener and updates the state's position and moveAvatar properties 
-  // They are passed down to this component and depending on their value they change the position of the navbar
-  // and hide/show the avatar
+  // Changes navbar's positioning
   const addClass = position == "fixed" ? " " + css.fixed : "";
   let style;
+  // Hides/shows avatar
   if (moveAvatar) {
     style = { paddingTop: 0, overflow: "auto" }
   }
