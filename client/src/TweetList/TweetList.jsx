@@ -12,8 +12,10 @@ const TweetList = ({ tweets, handleTweetClick }) => (
           screen_name 
         } = user;
 
-        const date = moment(created_at).startOf("day").fromNow();
+        const date = moment(created_at).startOf("day").fromNow(); // Parsing date to human readible format
         const profileImage = profile_image_url_https;
+        // When a user clicks on a tweet it gets the tweets data
+        // and toggles the clicked property on to show a modal view
         const tweetData = { text, date, name, profileImage, screen_name, clicked: true };
 
         return (

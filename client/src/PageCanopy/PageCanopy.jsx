@@ -8,11 +8,14 @@ class PageCanopy extends Component {
     super(props);
 
     this.state = {
-      position: "static",
+      position: "static", // initially the page canopy is static
       moveAvatar: false,
-    }
+    };
   }
 
+  // Listens to whenever new props are passed into this component
+  // Updates the state when new props are different from current state
+  // and results in changing the position of the navbar and hiding/showing the avatar
   componentWillReceiveProps(nextProps) {
     const position = nextProps.position;
     const moveAvatar = nextProps.moveAvatar;
@@ -26,6 +29,7 @@ class PageCanopy extends Component {
 
   render() {
     let style;
+    // Moves avatar 150px from bottom if moveAvatar is true
     if (this.state.moveAvatar) {
       style = { bottom: 150 };
     }

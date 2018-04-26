@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import css from "./navbar.css";
 
 const Navbar = ({ position, moveAvatar }) => {
+  // When user reaches a certain point in the page
+  // It triggers the scroll listener and updates the state's position and moveAvatar properties 
+  // They are passed down to this component and depending on their value they change the position of the navbar
+  // and hide/show the avatar
   const addClass = position == "fixed" ? " " + css.fixed : "";
   let style;
   if (moveAvatar) {

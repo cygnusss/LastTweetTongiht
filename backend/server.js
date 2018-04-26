@@ -11,7 +11,7 @@ const dist = path.join(__dirname, "../client/dist/");
 app.use(express.static(dist))
 
 // The tweets route returns 20 tweets each time it is requested
-// Each time it is requested it will save last tweet ID and get tweets that have older IDs
+// The route has a max_id parameter which sets the max_id for tweets when calling API
 app.get("/tweets", (req, resp) => {
   const max_id = req.query.max_id;
   // Check out Twit.js to see how this method works
