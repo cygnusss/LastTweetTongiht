@@ -31,7 +31,7 @@ class Feed extends Component {
   }
   
   componentWillReceiveProps(nextProps) {
-    // This will listen to the parent component to pass props
+    // This will listen to the parent component to pass down props
     // and will update the state when the navbar's position changes to fixed
     const position = nextProps.position;
     if (position !== this.state.position) {
